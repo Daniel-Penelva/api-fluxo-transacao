@@ -1,5 +1,6 @@
 package com.api.fluxotransacao.domain;
 
+import com.api.fluxotransacao.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,5 +26,14 @@ public class User {
     private String password;
     private UserType userType;
     private BigDecimal balance;
+
+    public User(UserDTO dto) {
+        this.name = dto.getName();
+        this.document = dto.getDocument();
+        this.email = dto.getEmail();
+        this.password = dto.getPassword();
+        this.userType = dto.getUserType();
+        this.balance = dto.getBalance();
+    }
 
 }
